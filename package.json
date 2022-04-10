@@ -9,6 +9,9 @@
   "peerDependencies": {
     "@layeredapps/dashboard": "latest"
   },
+  "devDependencies": {
+    "@layeredapps/dashboard": "latest"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
