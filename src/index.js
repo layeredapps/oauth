@@ -1,13 +1,14 @@
+const dashboard = require('@layeredapps/dashboard')
 const sequelize = require('sequelize')
 
 module.exports = {
-  registerOrSignIn: (identifier, provider) => {
+  registerOrSignIn: async (req, identifier, provider) => {
     const registered = await dashboard.Storage.Account.findOne({
       where: {
         usernameHash: `${identifier}@${provider}`
       }
     })
-    let accountid, sessionKey,sessionKeyNumber, profileid
+    let accountid, sessionKey, sessionKeyNumber, profileid
     // create their account and nascent profile information
     if (!registered || !registered.dataValues || !registered.dataValues.accountid) {
       const accountInfo = {
@@ -55,11 +56,11 @@ module.exports = {
       }
     })
     return {
-      account: { 
+      account: {
         accountid,
-        proileid
+        profileid
       },
-      session: { 
+      session: {
         sessionid: session.dataValues.sessionid,
         token: sessionToken
       }

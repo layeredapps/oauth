@@ -120,7 +120,7 @@ async function submitForm (req, res) {
     return renderPage(req, res, error.message)
   }
   res.writeHead(302, {
-    location: `/home`
+    location: '/home'
   })
   return res.end()
 }
