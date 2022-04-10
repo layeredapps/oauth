@@ -1,8 +1,8 @@
-const dashboard = require('@layeredapps/dashboard')
 const sequelize = require('sequelize')
 
 module.exports = {
   registerOrSignIn: async (req, identifier, provider) => {
+    const dashboard = require('@layeredapps/dashboard')
     const registered = await dashboard.Storage.Account.findOne({
       where: {
         usernameHash: `${identifier}@${provider}`
