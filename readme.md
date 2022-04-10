@@ -59,3 +59,8 @@ And configure the provider modules:
         "@layeredapps/oauth-github/src/content/signin-button.js"
       ]
     }
+
+Optionally require the user complete a profile with Dashboard's configuration setting:
+
+    REQUIRE_PROFILE=true
+    USER_PROFILE_FIELDS=....
