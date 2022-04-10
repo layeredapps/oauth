@@ -1,6 +1,6 @@
 {
   "name": "@layeredapps/oauth",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,9 +13,5 @@
   "author": "",
   "license": "ISC",
   "dashboard": {
-    "content": [
-      "/src/content/register-buttons.js",
-      "/src/content/signin-buttons.js"
-    ]
   }
 }
