@@ -1,8 +1,8 @@
+const dashboard = require('@layeredapps/dashboard')
 const sequelize = require('sequelize')
 
 module.exports = {
   registerOrSignIn: async (req, identifier, provider) => {
-    const dashboard = require('@layeredapps/dashboard')
     const registered = await dashboard.Storage.Account.findOne({
       where: {
         usernameHash: `${identifier}@${provider}`
@@ -22,7 +22,7 @@ module.exports = {
         accountInfo.administratorSince = sequelize.literal('CURRENT_TIMESTAMP')
         accountInfo.ownerSince = sequelize.literal('CURRENT_TIMESTAMP')
       }
-      const account = await global.apidashboard.Storage.Account.create(accountInfo)
+      const account = await dashboard.Storage.Account.create(accountInfo)
       accountid = account.dataValues.accountid
       sessionKey = account.dataValues.sessionKey
       sessionKeyNumber = account.dataValues.sessionKeyNumber
