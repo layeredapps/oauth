@@ -24,6 +24,11 @@ jobs:
         git config --global user.name "github-actions[bot]"
     - name: Increase version
       run: npm version patch
+    - name: Generate supporting text files
+      run: node main.js
+      env:
+        NODE_ENV: testing
+        EXIT_ON_START: true
     - name: Publish to Github
       uses: stefanzweifel/git-auto-commit-action@v4.1.6
       with:
