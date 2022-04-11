@@ -1,5 +1,5 @@
 const dashboard = require('../../../index.js')
-const navbar = require('@layeredapps/dashboard/src/www/accoumt/navbar-account.js')
+const navbar = require('@layeredapps/dashboard/src/www/account/navbar-account.js')
 
 module.exports = {
   get: renderPage,
