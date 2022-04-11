@@ -17,6 +17,8 @@ When the user authenticates with an OAuth service they can optionally be require
 
 Sessions created with OAuth do not expire until the user signs out or the session is expired in the user / administrator options.
 
+Accounts created with OAuth cannot `change username`, `change password`, or use `reset codes`.  If they navigate to these routes the requests are intercepted by a server handler and redirected to a conversion form that can convert an OAuth account to username/password.
+
 ## Import this module
 
 Install the module with NPM:
@@ -51,6 +53,9 @@ And configure the provider modules:
         "@layeredapps/oauth",
         "@layeredapps/oauth-github"
       ]
+      "server": [
+        "@layeredapps/oauth/src/server/redirect-unused.js",
+      ],
       "content": [
         "@layeredapps/oauth/src/content/register-buttons.js",
         "@layeredapps/oauth/src/content/signin-buttons.js",

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-navbar="/account/navbar-account.html">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" /> 
+    <title translate="yes">Convert account</title>
+    <link href="/public/content.css" rel="stylesheet">
+    <link href="/public/content-additional.css" rel="stylesheet">
+    <base target="_top" href="/">
+  </head>
+  <body>
+    <div class="container">
+      <h1 translate="yes">Convert account</h1>
+      <p translate="yes">Your account was created with OAuth and a third-party service, but you can convert it to username and password.  After converting it you cannot use OAuth to sign in.</p>
+      <div id="message-container"></div>
+      <form id="submit-form" method="post" class="input-form" action="/account/convert-account" name="submit-form">
+        <fieldset class="input-fields">
+          <label class="field-label" for="new-username" translate="yes">Username</label>
+          <div class="field">
+            <input required="required" id="new-username" name="new-username" type="text" maxlength="1000">
+          </div>
+        </fieldset>
+        <fieldset class="input-fields">
+          <label class="field-label" for="password" translate="yes">Password</label>
+          <div class="field">
+            <input required="required" id="new-password" name="new-password" type="password" maxlength="1000">
+          </div>
+        </fieldset>
+        <fieldset class="input-fields">
+          <label class="field-label" for="confirm" translate="yes">Confirm password</label>
+          <div class="field">
+            <input required="required" id="confirm-password" name="confirm-password" type="password" maxlength="1000">
+          </div>
+        </fieldset>
+        <div class="form-buttons">
+          <button id="submit-button" type="submit" class="button" translate="yes">Convert account</button>
+        </div>
+      </form>
+    </div>
+    <template id="conversion-required-change-credential">
+      <div class="error message" translate="yes">
+        Changing username and password does not work for OAuth accounts
+      </div>
+    </template>
+    <template id="conversion-required-reset-code">
+      <div class="error message" translate="yes">
+        OAuth accounts do not use account reset codes
+      </div>
+    </template>
+    <template id="success">
+      <div class="success message" translate="yes">
+        Success! You must use new usernamd and password from now on
+      </div>
+    </template>
+    <template id="invalid-new-password">
+      <div class="error message" translate="yes">
+        Error! Invalid new password
+      </div>
+    </template>
+    <template id="invalid-new-password-length">
+      <div class="error message" translate="yes">
+        Error! Invalid new password length
+      </div>
+    </template>
+    <template id="invalid-confirm-password">
+      <div class="error message" translate="yes">
+        Error! Invalid confirmation password
+      </div>
+    </template>
+    <template id="invalid-new-username">
+      <div class="error message" translate="yes">
+        Error! Invalid or duplicate new username
+      </div>
+    </template>
+    <template id="invalid-new-username-length">
+      <div class="error message" translate="yes">
+        Error! Invalid new username length
+      </div>
+    </template>
+    <template id="duplicate-username">
+      <div class="error message" translate="yes">
+        Error! Somebody else is using that username
+      </div>
+    </template>
+    <template id="unknown-error">
+      <div class="error message" translate="yes">
+        Error! An unknown error occurred
+      </div>
+    </template>
+  </body>
+</html>

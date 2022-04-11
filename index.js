@@ -58,7 +58,8 @@ module.exports = {
     return {
       account: {
         accountid,
-        profileid
+        profileid,
+        oauth: true
       },
       session: {
         sessionid: session.dataValues.sessionid,
