@@ -18,6 +18,7 @@ URL ------------------------------------------- AUTH - TEMPLATE - HTTP REQUESTS 
 /account/change-password                                          GET POST        @layeredapps/dashboard     @layeredapps/dashboard    
 /account/change-username                                          GET POST        @layeredapps/dashboard     @layeredapps/dashboard    
 /account/complete-profile                              FULLSCREEN GET POST        /src/www                   /src/www                  
+/account/convert-account                                          GET POST        /src/www                   /src/www                  
 /account/create-profile                                           GET POST        @layeredapps/dashboard     @layeredapps/dashboard    
 /account/create-reset-code                                        GET POST        @layeredapps/dashboard     @layeredapps/dashboard    
 /account/delete-account                                           GET POST        @layeredapps/dashboard     @layeredapps/dashboard    

@@ -649,6 +649,13 @@
       "templateDescription": "FULLSCREEN",
       "verbs": "GET POST",
       "authDescription": ""
+    },
+    "/account/convert-account": {
+      "htmlFilePath": "/src/www/account/convert-account.html",
+      "jsFilePath": "/src/www/account/convert-account.js",
+      "templateDescription": "",
+      "verbs": "GET POST",
+      "authDescription": ""
     }
   },
   "templateHTMLPath": "@layeredapps/dashboard/template.html",
