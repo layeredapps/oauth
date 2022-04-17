@@ -1,5 +1,4 @@
 const dashboard = require('@layeredapps/dashboard')
-const sequelize = require('sequelize')
 
 module.exports = {
   registerOrSignIn: async (req, identifier, provider) => {
@@ -19,8 +18,8 @@ module.exports = {
       }
       const otherUsersExist = await dashboard.Storage.Account.findOne()
       if (!otherUsersExist) {
-        accountInfo.administratorSince = sequelize.literal('CURRENT_TIMESTAMP')
-        accountInfo.ownerSince = sequelize.literal('CURRENT_TIMESTAMP')
+        accountInfo.administratorSince = new Date()
+        accountInfo.ownerSince = new Date()
       }
       const account = await dashboard.Storage.Account.create(accountInfo)
       accountid = account.dataValues.accountid
