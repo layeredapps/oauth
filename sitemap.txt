@@ -1,4 +1,4 @@
-@layeredapps/dashboard 0.0.19
+@layeredapps/dashboard 0.0.31
 http://localhost:8000
 
 Administrator menu:
@@ -13,7 +13,7 @@ Special HTML files:
 @layeredapps/dashboard/redirect.html
 
 URL ------------------------------------------- AUTH - TEMPLATE - HTTP REQUESTS - NODEJS ------------------- HTML ---------------------
-/                                               GUEST  FULLSCREEN                 static-page                @layeredapps/dashboard    
+/                                               GUEST  FULLSCREEN                 static-page                /src/www                  
 /account                                                          GET             @layeredapps/dashboard     @layeredapps/dashboard    
 /account/change-password                                          GET POST        @layeredapps/dashboard     @layeredapps/dashboard    
 /account/change-username                                          GET POST        @layeredapps/dashboard     @layeredapps/dashboard    
@@ -42,7 +42,7 @@ URL ------------------------------------------- AUTH - TEMPLATE - HTTP REQUESTS 
 /account/signout                                GUEST  FULLSCREEN GET             @layeredapps/dashboard     @layeredapps/dashboard    
 /account/signout-complete                       GUEST  FULLSCREEN                 static-page                @layeredapps/dashboard    
 /account/verify                                 GUEST  FULLSCREEN GET POST        @layeredapps/dashboard     @layeredapps/dashboard    
-/administrator                                                                    static-page                @layeredapps/dashboard    
+/administrator                                                    GET             @layeredapps/dashboard     @layeredapps/dashboard    
 /administrator/account                                            GET             @layeredapps/dashboard     @layeredapps/dashboard    
 /administrator/account-profiles                                   GET             @layeredapps/dashboard     @layeredapps/dashboard    
 /administrator/account-reset-codes                                GET             @layeredapps/dashboard     @layeredapps/dashboard    
@@ -72,6 +72,7 @@ URL ------------------------------------------- AUTH - TEMPLATE - HTTP REQUESTS 
 /api/administrator/delete-account                                 DELETE          @layeredapps/dashboard                               
 /api/administrator/deleted-accounts                               GET             @layeredapps/dashboard                               
 /api/administrator/deleted-accounts-count                         GET             @layeredapps/dashboard                               
+/api/administrator/metric-keys                                    GET             @layeredapps/dashboard                               
 /api/administrator/profile                                        GET             @layeredapps/dashboard                               
 /api/administrator/profiles                                       GET             @layeredapps/dashboard                               
 /api/administrator/profiles-count                                 GET             @layeredapps/dashboard                               
