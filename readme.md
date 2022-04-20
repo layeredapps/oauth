@@ -1,11 +1,16 @@
 # Documentation for OAuth module
 
+#### Shortcuts
+
+- [Documentation website](https://layeredapps.github.io)
+- [Module documentation](https://layeredapps.github.io/oauth-module)
+
 #### Index
 
 - [Introduction](#introduction)
 - [Import this module](#import-this-module)
-- [Github repository](https://github.com/layeredapps/maxmind-geoip)
-- [NPM package](https://npmjs.org/layeredapps/maxmind-geoip)
+- [Github repository](https://github.com/layeredapps/oauth)
+- [NPM package](https://npmjs.org/layeredapps/oauth)
 
 # Introduction
 
