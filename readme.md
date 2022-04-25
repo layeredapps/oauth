@@ -9,6 +9,7 @@
 
 - [Introduction](#introduction)
 - [Import this module](#import-this-module)
+- [Provided server, content and proxy handlers](#provided-server-content-and-proxy-handlers)
 - [Github repository](https://github.com/layeredapps/oauth)
 - [NPM package](https://npmjs.org/layeredapps/oauth)
 
@@ -74,3 +75,13 @@ Optionally require the user complete a profile with Dashboard's configuration se
 
     REQUIRE_PROFILE=true
     USER_PROFILE_FIELDS=....
+
+# Provided server, content and proxy handlers
+
+This module comes with some convenience scripts you can add to your `package.json`:
+
+| Type     | Script path                                         | Description                                                                                                                                                               |
+|----------|-----------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| content  | @layeredapps/oauth/src/content/register-buttons.js  | Adds a `<div id="oauth-buttons"></div>` container to the registration page for placing provider buttons.                                                                  |
+| content  | @layeredapps/oauth/src/content/signin-buttons.js    | Adds a `<div id="oauth-buttons"></div>` container to the signin page for placing provider buttons.                                                                        |
+| server   | @layeredapps/oauth/src/server/redirect-unused.js    | Redirects `change-username`, `change-password` and `create-reset-code` to a page where users may convert their Oauth-credentialed account to a username/password account. |
