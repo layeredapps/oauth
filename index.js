@@ -4,19 +4,25 @@ module.exports = {
   registerOrSignIn: async (req, identifier, provider) => {
     const registered = await dashboard.Storage.Account.findOne({
       where: {
-        usernameHash: `${identifier}@${provider}`
+        usernameHash: `${identifier}@${provider}`,
+        appid: req.appid || global.appid
       }
     })
     let accountid, sessionKey, sessionKeyNumber, profileid
     // create their account and nascent profile information
     if (!registered || !registered.dataValues || !registered.dataValues.accountid) {
       const accountInfo = {
+        appid: req.appid || global.appid,
         sessionKey: dashboard.UUID.random(64),
         sessionKeyNumber: 1,
         usernameHash: `${identifier}@${provider}`,
         passwordHash: `oauth@${provider}`
       }
-      const otherUsersExist = await dashboard.Storage.Account.findOne()
+      const otherUsersExist = await dashboard.Storage.Account.findOne({
+        where: {
+          appid: req.appid || global.appid
+        }
+      })
       if (!otherUsersExist) {
         accountInfo.administratorSince = new Date()
         accountInfo.ownerSince = new Date()
@@ -41,6 +47,7 @@ module.exports = {
     const sessionToken = dashboard.UUID.random(64)
     const tokenHash = await dashboard.Hash.sha512Hash(`${accountid}/${sessionToken}/${sessionKey}/${dashboardSessionKey}`, dashboardEncryptionKey)
     const sessionInfo = {
+      appid: req.appid || global.appid,
       accountid,
       tokenHash,
       sessionKeyNumber,
@@ -51,7 +58,8 @@ module.exports = {
       lastSignedInAt: session.dataValues.createdAt
     }, {
       where: {
-        accountid
+        accountid,
+        appid: req.appid || global.appid
       }
     })
     return {
