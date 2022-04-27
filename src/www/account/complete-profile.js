@@ -118,7 +118,7 @@ async function submitForm (req, res) {
     return renderPage(req, res, error.message)
   }
   res.writeHead(302, {
-    location: '/home'
+    location: global.homePath || '/home'
   })
   return res.end()
 }
