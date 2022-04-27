@@ -1,4 +1,4 @@
-@layeredapps/dashboard 0.0.45
+@layeredapps/dashboard 0.0.62
 http://localhost:8000
 
 Administrator menu:
@@ -114,3 +114,5 @@ URL ------------------------------------------- AUTH - TEMPLATE - HTTP REQUESTS 
 /api/user/set-session-verified                                    PATCH           @layeredapps/dashboard                               
 /api/user/update-profile                                          PATCH           @layeredapps/dashboard                               
 /home                                                                             static-page                @layeredapps/dashboard    
+
+2022-04-26T04:37:43.969Z
