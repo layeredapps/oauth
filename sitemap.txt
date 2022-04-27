@@ -115,4 +115,4 @@ URL ------------------------------------------- AUTH - TEMPLATE - HTTP REQUESTS 
 /api/user/update-profile                                          PATCH           @layeredapps/dashboard                               
 /home                                                                             static-page                @layeredapps/dashboard    
 
-2022-04-27T03:01:00.451Z
+2022-04-27T10:55:30.794Z
