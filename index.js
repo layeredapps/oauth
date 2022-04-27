@@ -1,3 +1,4 @@
+const crypto = require('crypto')
 const dashboard = require('@layeredapps/dashboard')
 
 module.exports = {
@@ -13,7 +14,7 @@ module.exports = {
     if (!registered || !registered.dataValues || !registered.dataValues.accountid) {
       const accountInfo = {
         appid: req.appid || global.appid,
-        sessionKey: dashboard.UUID.random(64),
+        sessionKey: crypto.randomBytes(32).toString('hex'),
         sessionKeyNumber: 1,
         usernameHash: `${identifier}@${provider}`,
         passwordHash: `oauth@${provider}`
@@ -44,7 +45,7 @@ module.exports = {
       dashboardEncryptionKey = req.server.dashboardEncryptionKey || dashboardEncryptionKey
       dashboardSessionKey = req.server.dashboardSessionKey || dashboardSessionKey
     }
-    const sessionToken = dashboard.UUID.random(64)
+    const sessionToken = crypto.randomBytes(32).toString('hex')
     const tokenHash = await dashboard.Hash.sha512Hash(`${accountid}/${sessionToken}/${sessionKey}/${dashboardSessionKey}`, dashboardEncryptionKey)
     const sessionInfo = {
       appid: req.appid || global.appid,
