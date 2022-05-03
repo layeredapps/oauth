@@ -14,6 +14,7 @@
       <p translate="yes">Your account was created with OAuth and a third-party service, but you can convert it to username and password.  After converting it you cannot use OAuth to sign in.</p>
       <div id="message-container"></div>
       <form id="submit-form" method="post" class="input-form" action="/account/convert-account" name="submit-form">
+        <input type="hidden" name="csrf-token" />
         <fieldset class="input-fields">
           <label class="field-label" for="new-username" translate="yes">Username</label>
           <div class="field">
@@ -85,6 +86,16 @@
     <template id="unknown-error">
       <div class="error message" translate="yes">
         Error! An unknown error occurred
+      </div>
+    </template>
+    <template id="invalid-csrf-token">
+      <div class="error message" translate="yes">
+        Error! This form was not submitted correctly
+      </div>
+    </template>
+    <template id="invalid-xss-input">
+      <div class="error message" translate="yes">
+        Error! Invalid value(s) were posted to the server
       </div>
     </template>
   </body>
