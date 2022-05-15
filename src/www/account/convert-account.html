@@ -33,8 +33,11 @@
             <input required="required" id="confirm-password" name="confirm-password" type="password" maxlength="1000">
           </div>
         </fieldset>
-        <div class="form-buttons">
-          <button id="submit-button" type="submit" class="button" translate="yes">Convert account</button>
+        <div class="input-fields">
+          <label class="field-label"></label>
+          <div class="form-buttons">
+            <button id="submit-button" type="submit" class="button" translate="yes">Convert account</button>
+          </div>
         </div>
       </form>
     </div>
@@ -85,7 +88,7 @@
     </template>
     <template id="unknown-error">
       <div class="error message" translate="yes">
-        Error! An unknown error occurred
+        Error! Something went wrong submitting the form
       </div>
     </template>
     <template id="invalid-csrf-token">
