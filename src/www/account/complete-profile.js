@@ -8,15 +8,15 @@ module.exports = {
 function renderPage (req, res, messageTemplate) {
   messageTemplate = messageTemplate || (req.query ? req.query.message : null)
   const doc = dashboard.HTML.parse(req.html || req.route.html)
-  const removeFields = [].concat(global.profileFields)
+  const removeElements = [].concat(global.profileFields)
   const profileFields = req.userProfileFields || global.userProfileFields
   for (const field of profileFields) {
-    removeFields.splice(removeFields.indexOf(field), 1)
+    removeElements.splice(removeElements.indexOf(field), 1)
   }
   if (messageTemplate) {
     dashboard.HTML.renderTemplate(doc, null, messageTemplate, 'message-container')
   }
-  for (const id of removeFields) {
+  for (const id of removeElements) {
     const element = doc.getElementById(`${id}-container`)
     element.parentNode.removeChild(element)
   }
